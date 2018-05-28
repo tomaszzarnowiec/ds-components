@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #333; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+  a:hover {
+    text-decoration: inherit;
+    color: inherit; }
+
+.ds-dashboard-page {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  background-color: #f0f4f6; }
+  .ds-dashboard-page .ds-menu {
+    background-color: #fff;
+    border-right: 2px solid #edf2f4; }
+    .ds-dashboard-page .ds-menu .ds-profile .ds-profile-avatar {
+      background-image: url(https://images.unsplash.com/photo-1512663150964-d8f43c899f76?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b242aff1e8f815be2351dc01c195fd86&auto=format&fit=crop&w=1456&q=80);
+      background-size: cover;
+      background-position: center;
+      width: 80px;
+      height: 80px; }
