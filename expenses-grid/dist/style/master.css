@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #444;
+  background-color: #efefef; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #7a7892; }
+  a:hover {
+    text-decoration: inherit;
+    color: #4c91e2; }
+
+p {
+  margin-top: 0px; }
+
+h1 {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 0px; }
+
+h3 {
+  font-size: 15px;
+  font-weight: 300; }
+
+.bold {
+  font-weight: 500; }
+
+.mock-container {
+  display: grid;
+  justify-content: center;
+  padding-top: 10vh; }
+
+.expenses-grid {
+  background: #fafafa;
+  width: 50vw; }
+  .expenses-grid .expenses-row {
+    display: grid;
+    grid-template-columns: max-content 3fr;
+    align-items: center;
+    border: 1px solid #eee;
+    border-bottom: 0px;
+    position: relative; }
+    .expenses-grid .expenses-row:last-child {
+      border-bottom: 1px solid #eee; }
+    .expenses-grid .expenses-row .expenses-icon {
+      border-right: 1px solid #eee;
+      font-size: 30px;
+      padding: 25px 30px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2AAAEF; }
+    .expenses-grid .expenses-row .expenses-details {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      color: #4d4d4d;
+      z-index: 2; }
+      .expenses-grid .expenses-row .expenses-details .amount, .expenses-grid .expenses-row .expenses-details .name {
+        font-size: 18px; }
+      .expenses-grid .expenses-row .expenses-details .amount, .expenses-grid .expenses-row .expenses-details .date {
+        text-align: right; }
+      .expenses-grid .expenses-row .expenses-details .name {
+        font-weight: 400; }
+      .expenses-grid .expenses-row .expenses-details .amount {
+        font-weight: 500;
+        color: #d00d26; }
+      .expenses-grid .expenses-row .expenses-details .category, .expenses-grid .expenses-row .expenses-details .date {
+        font-size: 13px;
+        font-weight: 500;
+        color: #9b9b9b;
+        padding-top: 5px; }
+    .expenses-grid .expenses-row .expenses-actions {
+      position: absolute;
+      right: 0px;
+      opacity: 0;
+      width: 50px;
+      height: calc(100% + 1px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all ease-in-out .3s;
+      z-index: 1; }
+    .expenses-grid .expenses-row:hover .expenses-actions {
+      right: -52px;
+      opacity: 1; }

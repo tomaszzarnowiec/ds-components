@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expenses grid</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" href="dist/style/master.css">
+    </head>
+    <body ng-controller="AppController">
+        <div class="mock-container">
+            <div class="expenses-grid">
+                <div class="expenses-row">
+                    <div class="expenses-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <div class="expenses-details">
+                        <span class="name">Bank transfer</span>
+                        <span class="amount">- $1800</span>
+                        <span class="category">Food</span>
+                        <span class="date">14 Aug 2018</span>
+                    </div>
+                    <div class="expenses-actions">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                </div>
+
+                <div class="expenses-row">
+                    <div class="expenses-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <div class="expenses-details">
+                        <span class="name">Tesco</span>
+                        <span class="amount">- $20,45</span>
+                        <span class="category">Food</span>
+                        <span class="date">18 Aug 2018</span>
+                    </div>
+                </div>
+
+                <div class="expenses-row">
+                    <div class="expenses-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <div class="expenses-details">
+                        <span class="name">Media Expert</span>
+                        <span class="amount">- $99,99</span>
+                        <span class="category">Electronics</span>
+                        <span class="date">23 Aug 2018</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.0/angular.min.js" charset="utf-8"></script>
+        <script src="dist/app/app.module.js" charset="utf-8"></script>
+        <script src="dist/app/app.controller.js" charset="utf-8"></script>
+
+    </body>
+</html>
