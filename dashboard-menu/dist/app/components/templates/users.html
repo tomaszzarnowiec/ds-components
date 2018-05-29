@@ -1,0 +1,25 @@
+<div class="ds-grid-row users-grid" ng-repeat="user in $ctrl.data.rows">
+    <div class="ds-grid-col-avatar">
+        <img ng-src="{{user.avatar}}" alt="">
+    </div>
+    <div class="ds-grid-col-details">
+        <p>{{user.username}}</p>
+        <div class="user-details">
+            <span>
+                <i class="fas fa-calendar" title="Birth date"></i> {{user.birthDate}}
+            </span>
+            <span>
+                <i class="fas fa-user-tie" title="Position"></i> {{user.birthDate}}
+            </span>
+        </div>
+    </div>
+    <div class="ds-grid-col-amount">
+        <span>Need to transfer</span>
+        <span class="text-success">{{user.amount | currency}}</span>
+    </div>
+    <div class="ds-grid-col-actions">
+        <button class="action-button">
+            <i class="fas fa-edit"></i>
+        </button>
+    </div>
+</div>

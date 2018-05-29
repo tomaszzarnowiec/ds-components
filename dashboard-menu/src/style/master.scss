@@ -7,7 +7,7 @@ body {
     padding: 0;
 
     font-family: $font-family;
-    font-size: 16px;
+    font-size: 14px;
     color: $text-color;
 }
 
@@ -19,12 +19,46 @@ ul {
 
 a {
     text-decoration: none;
-    color: $text-color;
+    color: #7a7892;
 
     &:hover {
         text-decoration: inherit;
-        color: inherit;
+        color: #4c91e2;
+    }
+}
+
+p {
+    margin-top: 0px;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #7a7892;
+    padding: 7px 10px;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: #4c91e2;
     }
 }
 
 @import "ds-dashboard-page";
+@import "ds-grid-table";
