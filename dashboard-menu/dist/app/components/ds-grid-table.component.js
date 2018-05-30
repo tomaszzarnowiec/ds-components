@@ -22,6 +22,14 @@
 
     /* @ngInject */
     function DsGridTableController($scope) {
+        var ctrl = this;
+
+        ctrl.reverseSort = false;
+
+        this.sortBy = function(prop){
+            ctrl.reverseSort = (ctrl.orderBy === prop) ? !ctrl.reverseSort : false;
+            ctrl.orderBy = prop;
+        }
 
     }
 })();

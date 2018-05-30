@@ -1,0 +1,20 @@
+.fadeInUp {
+    &.ng-leave, &.ng-move {
+        -webkit-animation: fadeOutDown .5s;
+        animation: fadeOutDown .5s;
+    }
+}
+
+.page-animation {
+    &.ng-enter {
+        z-index: 80;
+        -webkit-animation: fadeInRightBig .5s;
+        animation: fadeInRightBig .5s;
+    }
+
+    &.ng-leave {
+        z-index: 90;
+        -webkit-animation: fadeOutLeftBig .5s;
+        animation: fadeOutLeftBig .5s;
+    }
+}

@@ -1,0 +1,28 @@
+.ds-button {
+    background-color: #e4e4e4;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding: 0.6em 1em;
+    color: #929292;
+    margin-left: 5px;
+    font-size: 12px;
+    outline: none;
+
+    &.success {
+        background-color: $success;
+        border: 1px solid darken($success , 10%);
+        color: $menu-bg;
+    }
+
+    &.info {
+        background-color: $info;
+        border: 1px solid darken($info , 10%);
+        color: $menu-bg;
+    }
+
+    &.danger {
+        background-color: $danger;
+        border: 1px solid darken($danger , 10%);
+        color: $menu-bg;
+    }
+}

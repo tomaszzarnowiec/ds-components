@@ -1,10 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+.fadeInUp.ng-leave, .fadeInUp.ng-move {
+  -webkit-animation: fadeOutDown .5s;
+  animation: fadeOutDown .5s; }
+
+.page-animation.ng-enter {
+  z-index: 80;
+  -webkit-animation: fadeInRightBig .5s;
+  animation: fadeInRightBig .5s; }
+
+.page-animation.ng-leave {
+  z-index: 90;
+  -webkit-animation: fadeOutLeftBig .5s;
+  animation: fadeOutLeftBig .5s; }
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  color: #444; }
+  color: #444;
+  background-color: #f5f5f5;
+  overflow-x: hidden; }
 
 ul {
   list-style: none;
@@ -16,18 +32,23 @@ a {
   color: #7a7892; }
   a:hover {
     text-decoration: inherit;
-    color: #4c91e2; }
+    color: #dd1a84; }
 
 p {
-  margin-top: 0px; }
+  margin-top: 0px;
+  line-height: 1.5em; }
 
 h1 {
-  font-size: 30px;
+  font-size: 2em;
   font-weight: 300;
   margin-bottom: 0px; }
 
+h2 {
+  font-size: 1.5em;
+  font-weight: 300; }
+
 h3 {
-  font-size: 15px;
+  font-size: 1.2em;
   font-weight: 300; }
 
 .bold {
@@ -42,18 +63,67 @@ h3 {
   font-size: 20px;
   cursor: pointer; }
   .action-button:hover {
-    color: #4c91e2; }
+    color: #dd1a84; }
+
+.filter {
+  position: relative; }
+
+.text-success {
+  color: green; }
+
+.grid {
+  display: grid; }
+  .grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr); }
+  .grid.gap-10 {
+    grid-gap: 15px; }
+
+input[type="text"] {
+  padding: 10px 2.5em 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  color: #929292;
+  font-size: 13px;
+  font-family: "Roboto", sans-serif; }
+
+input[type="text"] + i {
+  color: #929292;
+  position: absolute;
+  right: 0.8em;
+  top: 0.8em; }
+
+.ds-button {
+  background-color: #e4e4e4;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 0.6em 1em;
+  color: #929292;
+  margin-left: 5px;
+  font-size: 12px;
+  outline: none; }
+  .ds-button.success {
+    background-color: #58a560;
+    border: 1px solid #46844d;
+    color: #fff; }
+  .ds-button.info {
+    background-color: #4a8dbb;
+    border: 1px solid #397299;
+    color: #fff; }
+  .ds-button.danger {
+    background-color: #c33536;
+    border: 1px solid #9b2a2b;
+    color: #fff; }
 
 .ds-dashboard-page {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  background-color: #f0f4f6; }
+  grid-template-columns: 280px 1fr; }
   .ds-dashboard-page .ds-menu {
     position: fixed;
     width: 280px;
     min-height: 100vh;
     background-color: #fff;
-    border-right: 2px solid #edf2f4; }
+    border-right: 2px solid #f2f2f2;
+    z-index: 100; }
     .ds-dashboard-page .ds-menu .ds-logo {
       text-align: center;
       padding: 60px 0px; }
@@ -94,10 +164,15 @@ h3 {
         color: #dd1a84; }
   .ds-dashboard-page .ds-content {
     grid-column-start: 2;
-    padding: 30px;
-    min-height: 100vh; }
+    position: relative; }
+    .ds-dashboard-page .ds-content .page {
+      position: absolute;
+      width: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      background-color: #f5f5f5; }
     .ds-dashboard-page .ds-content .ds-content-header {
-      border-bottom: 1px solid #e3ebee;
+      border-bottom: 1px solid #ebebeb;
       margin-bottom: 15px; }
 
 ds-grid-table .ds-grid-row {
@@ -105,16 +180,37 @@ ds-grid-table .ds-grid-row {
   align-items: center;
   justify-content: space-between;
   background-color: #fafafa;
-  border: 1px solid #edf2f4;
+  border: 1px solid #f2f2f2;
   margin-bottom: 15px;
-  box-shadow: 0px 3px 7px #dddddd7a;
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
   border-radius: 4px; }
   ds-grid-table .ds-grid-row > div {
     padding: 15px; }
 
+ds-grid-table .ds-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+ds-grid-table .ds-grid-sorting .ds-grid-sorting-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px; }
+  ds-grid-table .ds-grid-sorting .ds-grid-sorting-container .ds-grid-label {
+    font-weight: 500;
+    color: #444; }
+
+ds-grid-table .ds-grid-filters {
+  padding-bottom: 20px; }
+
+ds-grid-table .ds-grid-rows {
+  display: block; }
+
 ds-grid-table .users-grid {
   display: grid;
-  grid-template-columns: 100px 4fr 1fr 1fr; }
+  grid-template-columns: 100px 4fr max-content 1fr; }
   ds-grid-table .users-grid .ds-grid-col-avatar img {
     max-width: 60px;
     border-radius: 50%; }
@@ -128,7 +224,51 @@ ds-grid-table .users-grid {
       color: #e4e7e8;
       font-size: 15px;
       padding-right: 5px; }
+  ds-grid-table .users-grid .ds-grid-col-amount .label {
+    display: block;
+    font-size: 0.9em;
+    color: #929292;
+    font-weight: 500;
+    padding-bottom: 10px; }
   ds-grid-table .users-grid .ds-grid-col-actions {
     height: 100%;
     display: flex;
     justify-content: center; }
+
+.ds-panel {
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06); }
+  .ds-panel > div {
+    padding: 15px; }
+  .ds-panel .ds-panel-header {
+    border-bottom: 1px solid #ddd;
+    font-size: 1.2em;
+    font-weight: 300; }
+  .ds-panel .ds-panel-footer {
+    border-top: 1px solid #ddd;
+    margin: 0px 15px;
+    padding: 15px 0px; }
+  .ds-panel.theme-success {
+    border-color: #58a560; }
+    .ds-panel.theme-success > .ds-panel-header {
+      background-color: #58a560;
+      color: #fafafa;
+      border-bottom-color: #58a560; }
+  .ds-panel.theme-danger {
+    border-color: #c33536; }
+    .ds-panel.theme-danger > .ds-panel-header {
+      background-color: #c33536;
+      color: #fafafa;
+      border-bottom-color: #c33536; }
+  .ds-panel.theme-info {
+    border-color: #4a8dbb; }
+    .ds-panel.theme-info > .ds-panel-header {
+      background-color: #4a8dbb;
+      color: #fafafa;
+      border-bottom-color: #4a8dbb; }
+  .ds-panel.theme-blank {
+    border: 0px; }

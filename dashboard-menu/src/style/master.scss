@@ -2,6 +2,8 @@
 
 @import "variables";
 
+@import "animations";
+
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +11,8 @@ body {
     font-family: $font-family;
     font-size: 14px;
     color: $text-color;
+    background-color: $page-bg;
+    overflow-x: hidden;
 }
 
 ul {
@@ -23,22 +27,28 @@ a {
 
     &:hover {
         text-decoration: inherit;
-        color: #4c91e2;
+        color: $hover-color;
     }
 }
 
 p {
     margin-top: 0px;
+    line-height: 1.5em;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 2em;
     font-weight: 300;
     margin-bottom: 0px;
 }
 
+h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
 h3 {
-    font-size: 15px;
+    font-size: 1.2em;
     font-weight: 300;
 }
 
@@ -56,9 +66,52 @@ h3 {
     cursor: pointer;
 
     &:hover {
-        color: #4c91e2;
+        color: $hover-color;
     }
 }
 
+.filter {
+    position: relative;
+}
+
+.text-success {
+    color: green;
+}
+
+.grid {
+    display: grid;
+
+    &.cols {
+        &-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &.gap {
+        &-10 {
+            grid-gap: 15px;
+        }
+    }
+}
+
+input[type="text"] {
+    padding: 10px 2.5em 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    color: #929292;
+    font-size: 13px;
+    font-family: $font-family;
+}
+
+input[type="text"] + i {
+    color: #929292;
+    position: absolute;
+    right: 0.8em;
+    top: 0.8em;
+}
+
+@import "ds-button";
 @import "ds-dashboard-page";
 @import "ds-grid-table";
+
+@import "ds-panel";

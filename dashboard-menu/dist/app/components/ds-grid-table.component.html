@@ -1,7 +1,10 @@
-<div class="ds-grid-sorting">
-
+<div class="ds-grid-header">
+    <div class="ds-grid-sorting" ng-include="'dist/app/components/templates/'+ $ctrl.data.template +'.sorting.html'"></div>
+    <div class="ds-grid-filters">
+        <div class="filter">
+            <input type="text" name="searchBy" ng-model="$ctrl.searchBy" placeholder="Search">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
 </div>
-<div class="ds-grid-filters">
-
-</div>
-<div class="ds-grid-rows" ng-include="'dist/app/components/templates/'+ $ctrl.data.template +'.html'"></div>
+<div class="ds-grid-rows" ng-include="'dist/app/components/templates/'+ $ctrl.data.template +'.row.html'"></div>

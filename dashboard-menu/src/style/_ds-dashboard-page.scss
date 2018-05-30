@@ -1,7 +1,6 @@
 .ds-dashboard-page {
     display: grid;
     grid-template-columns: 280px 1fr;
-    background-color: $page-bg;
 
     .ds-menu {
         position: fixed;
@@ -9,6 +8,7 @@
         min-height: 100vh;
         background-color: $menu-bg;
         border-right: 2px solid $menu-border;
+        z-index: 100;
 
         .ds-logo {
             text-align: center;
@@ -74,8 +74,15 @@
 
     .ds-content {
         grid-column-start: 2;
-        padding: 30px;
-        min-height: 100vh;
+        position: relative;
+
+        .page {
+            position: absolute;
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+            background-color: $page-bg;
+        }
 
         .ds-content-header {
             border-bottom: 1px solid darken($menu-border, 3%);

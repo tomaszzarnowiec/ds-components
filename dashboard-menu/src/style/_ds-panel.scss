@@ -1,0 +1,64 @@
+.ds-panel {
+    background: $menu-bg;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.06);
+
+    > div {
+        padding: 15px;
+    }
+
+    .ds-panel-header {
+        border-bottom: 1px solid #ddd;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+    .ds-panel-body {
+
+    }
+
+    .ds-panel-footer {
+        border-top: 1px solid #ddd;
+        margin: 0px 15px;
+        padding: 15px 0px;
+    }
+
+    // themes
+
+    &.theme-success {
+        border-color: $success;
+
+        > .ds-panel-header {
+            background-color: $success;
+            color: #fafafa;
+            border-bottom-color: $success;
+        }
+    }
+
+    &.theme-danger {
+        border-color: $danger;
+
+        > .ds-panel-header {
+            background-color: $danger;
+            color: #fafafa;
+            border-bottom-color: $danger;
+        }
+    }
+
+    &.theme-info {
+        border-color: $info;
+
+        > .ds-panel-header {
+            background-color: $info;
+            color: #fafafa;
+            border-bottom-color: $info;
+        }
+    }
+
+    &.theme-blank {
+        border: 0px;
+    }
+}
